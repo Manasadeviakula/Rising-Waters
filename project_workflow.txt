@@ -1,0 +1,53 @@
+Description
+
+The Loan Approval Prediction System is developed through a structured workflow consisting of multiple epics, covering data collection, data analysis, preprocessing, machine learning model development, and web application deployment. Each epic represents a specific phase of the project and is divided into user stories that describe the tasks performed during that phase. This structured approach ensures systematic development, better organization, and accurate loan approval prediction.
+
+Epic 1: Data Collection
+
+Story 1: Download the Loan Approval Prediction dataset and load it into the Jupyter Notebook environment for data analysis and model development.
+
+Epic 2: Visualizing and Analysing the Data
+
+Story 1: Import all the required Python libraries for data manipulation, visualization, and machine learning.
+
+Story 2: Read and explore the dataset to understand its structure, input features, and target variable.
+
+Story 3: Perform univariate analysis to study the distribution of individual features.
+
+Story 4: Conduct multivariate analysis to identify relationships among different features.
+
+Story 5: Perform descriptive statistical analysis to summarize the dataset and identify key insights.
+
+Epic 3: Data Pre-Processing
+
+Story 1: Handle missing values to improve data quality.
+
+Story 2: Detect and treat outliers that may affect prediction performance.
+
+Story 3: Convert categorical variables into numerical values using suitable encoding techniques.
+
+Story 4: Split the dataset into training and testing sets.
+
+Story 5: Apply feature scaling techniques to normalize numerical features.
+
+Epic 4: Model Building
+
+Story 1: Train the Decision Tree model.
+
+Story 2: Build and evaluate the Random Forest model.
+
+Story 3: Implement and test the K-Nearest Neighbors (KNN) model.
+
+Story 4: Train the XGBoost model and compare its performance.
+
+Story 5: Compare all models using evaluation metrics.
+
+Story 6: Select the best-performing model and save it as a Pickle (.pkl) file for deployment.
+
+Epic 5: Application Building
+
+Story 1: Design and develop HTML pages for the web application.
+
+Story 2: Build the Flask application and integrate the trained machine learning model.
+
+Story 3: Test and validate the web application to ensure accurate loan approval predictions.
