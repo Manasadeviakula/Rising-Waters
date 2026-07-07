@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe - No Flood Risk</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .params-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin: 15px 0 25px;
+        }
+        @media (max-width: 600px) {
+            .params-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .param-item {
+            background: #f8f9fa;
+            padding: 12px 15px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .param-item .label {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        .param-item .value {
+            font-weight: 700;
+            font-size: 1rem;
+        }
+        .param-item .normal {
+            color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+    <!-- Success Banner -->
+    <div class="alert-banner alert-success">
+        <div class="alert-content">
+            <span class="alert-icon"></span>
+            <span class="alert-text">SAFE - No Flood Risk Detected</span>
+            <span class="alert-icon"></span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="brand-text"> FloodPredictor</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/predict">Predict</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Prediction Result -->
+    <section class="result-container result-safe">
+        <div class="container">
+            <div class="result-card safe">
+                <div class="result-header">
+                    <div class="result-icon"></div>
+                    <h1 class="result-title">No Flood Risk Detected</h1>
+                    <div class="risk-level">
+                        <span class="risk-badge low">Low Risk</span>
+                        <span class="risk-probability">{{ probability }}% Chance</span>
+                    </div>
+                    <p class="model-info">Based on XGBoost Model (10 Features)</p>
+                </div>
+
+                <div class="result-body">
+                    <div class="success-message">
+                        <h2> Current Conditions Are Safe</h2>
+                        <p>Based on the current weather parameters, there is <strong>no immediate flood risk</strong> in your area.</p>
+                    </div>
+
+                    <h3> Weather Summary</h3>
+                    <div class="params-grid">
+                        <div class="param-item"><span class="label"> Temp</span><span class="value normal">{{ temp }}</span></div>
+                        <div class="param-item"><span class="label"> Humidity</span><span class="value normal">{{ humidity }}</span></div>
+                        <div class="param-item"><span class="label">Cloud Cover</span><span class="value normal">{{ cloud_cover }}</span></div>
+                        <div class="param-item"><span class="label"> ANNUAL</span><span class="value normal">{{ annual }}</span></div>
+                        <div class="param-item"><span class="label"> Jan-Feb</span><span class="value normal">{{ jan_feb }}</span></div>
+                        <div class="param-item"><span class="label"> Mar-May</span><span class="value normal">{{ mar_may }}</span></div>
+                        <div class="param-item"><span class="label"> Jun-Sep</span><span class="value normal">{{ jun_sep }}</span></div>
+                        <div class="param-item"><span class="label"> Oct-Dec</span><span class="value normal">{{ oct_dec }}</span></div>
+                        <div class="param-item"><span class="label"> avgjune</span><span class="value normal">{{ avgjune }}</span></div>
+                        <div class="param-item"><span class="label"> sub</span><span class="value normal">{{ sub }}</span></div>
+                    </div>
+
+                    <div class="preventive-tips">
+                        <h3> Stay Safe Tips</h3>
+                        <div class="tips-grid">
+                            <div class="tip">
+                                <span class="tip-icon">📱</span>
+                                <div>
+                                    <h4>Stay Informed</h4>
+                                    <p>Monitor weather forecasts regularly</p>
+                                </div>
+                            </div>
+                            <div class="tip">
+                                <span class="tip-icon"></span>
+                                <div>
+                                    <h4>Be Prepared</h4>
+                                    <p>Keep emergency supplies ready</p>
+                                </div>
+                            </div>
+                            <div class="tip">
+                                <span class="tip-icon"></span>
+                                <div>
+                                    <h4>Know Your Area</h4>
+                                    <p>Understand local flood zones</p>
+                                </div>
+                            </div>
+                            <div class="tip">
+                                <span class="tip-icon"></span>
+                                <div>
+                                    <h4>Regular Updates</h4>
+                                    <p>Check predictions frequently</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="result-actions">
+                        <a href="/predict" class="btn btn-secondary" style="flex:1;"> Check Again</a>
+                        <a href="/" class="btn btn-primary" style="flex:1;">Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Flood Prediction System. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
