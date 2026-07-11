@@ -70,6 +70,7 @@ python train.py
 ## Run Flask Application
 
 ```bash
+python -m pip install joblib
 python app.py
 ```
 
